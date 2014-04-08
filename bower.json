@@ -1,0 +1,22 @@
+{
+  "name":"ticker",
+  "version":"0.0.0",
+  "authors":[
+    "G <giovannivajnadepava@gmail.com>"
+  ],
+  "main":"index.html",
+  "license":"MIT",
+  "private":true,
+  "ignore":[
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies":{
+    "angular":"1.2.16",
+    "angular-animate":"1.2.16",
+    "angular-sanitize":"1.2.16"
+  }
+}

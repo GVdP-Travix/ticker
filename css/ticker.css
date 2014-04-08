@@ -1,0 +1,133 @@
+div.ticker-wrapper {
+  /*height: 2em;*/
+  /*overflow-y: hidden;*/
+  color: white;
+  position: relative;
+}
+
+/*div.ticker-wrapper div.ticker-container {*/
+/*background-color: grey;*/
+/*position: absolute;*/
+/*border: solid 1px black;*/
+/*overflow: auto;*/
+/*}*/
+
+div.ticker-container:before, div.ticker-container:after, div.ticker-wrapper:before, div.ticker-wrapper:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+div.ticker-wrapper header.ticker-header {
+  background-color: purple;
+  float: left;
+}
+
+div.ticker-wrapper.ticker-header-on header.ticker-header {
+  display: inline-block;
+  width: 20%;
+}
+
+div.ticker-wrapper.ticker-header-on fieldset.ticker-items {
+  width: 80%;
+}
+
+div.ticker-wrapper.ticker-header-slide header.ticker-header {
+  -webkit-animation-delay: 1s;
+  /*animation-duration: 3s;*/
+  -webkit-animation-duration: 1s;
+  /*-moz-animation-duration: 3s;*/
+  /*animation-name: scroll-left;*/
+  -webkit-animation-name: ticker-header-slide-left;
+  /*-moz-animation-name: scroll-left;*/
+  -webkit-animation-fill-mode: both;
+}
+
+@-webkit-keyframes ticker-header-slide-left {
+  from {
+    display: inline-block;
+    width: 20%;
+  }
+
+  to {
+    width: 0;
+    display: none;
+  }
+}
+
+div.ticker-wrapper.ticker-header-slide fieldset.ticker-items {
+  -webkit-animation-delay: 1s;
+  /*animation-duration: 3s;*/
+  -webkit-animation-duration: 1s;
+  /*-moz-animation-duration: 3s;*/
+  /*animation-name: scroll-left;*/
+  -webkit-animation-name: expand-left;
+  /*-moz-animation-name: scroll-left;*/
+  -webkit-animation-fill-mode: both;
+}
+
+@-webkit-keyframes expand-left {
+  from {
+    width: 80%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+div.ticker-wrapper header.ticker-header span {
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: inherit;
+}
+
+div.ticker-wrapper fieldset.ticker-items {
+  background-color: yellow;
+  float: right;
+  display: inline-block;
+  overflow: hidden;
+}
+
+div.ticker-wrapper fieldset.ticker-items legend.ticker-topic {
+  background-color: green;
+  display: block;
+  width: 100%;
+  padding: 0 0 0 1em;
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: inherit;
+}
+
+div.ticker-wrapper fieldset.ticker-items ul.ticker-list {
+  background-color: cyan;
+  width: 100%;
+  overflow: hidden;
+}
+
+div.ticker-wrapper fieldset.ticker-items ul.ticker-list li.ticker-item {
+  background-color: red;
+  display: inline-block;
+  width: 100%;
+}
+
+.ticker-scroller-left {
+  /*animation-duration: 3s;*/
+  -webkit-animation-duration: 3s;
+  /*-moz-animation-duration: 3s;*/
+  /*animation-name: scroll-left;*/
+  -webkit-animation-name: scroll-left;
+  /*-moz-animation-name: scroll-left;*/
+}
+
+@-webkit-keyframes scroll-left {
+  from {
+    padding-left: 100%;
+  }
+
+  to {
+  }
+}
+
