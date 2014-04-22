@@ -24,8 +24,11 @@ div.ticker-wrapper header.ticker-header {
 }
 
 div.ticker-wrapper.ticker-header-on header.ticker-header {
+  white-space: nowrap;
   display: inline-block;
   width: 20%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 div.ticker-wrapper.ticker-header-on fieldset.ticker-items {
@@ -33,14 +36,8 @@ div.ticker-wrapper.ticker-header-on fieldset.ticker-items {
 }
 
 div.ticker-wrapper.ticker-header-slide header.ticker-header {
-  -webkit-animation-delay: 1s;
-  /*animation-duration: 3s;*/
-  -webkit-animation-duration: 1s;
-  /*-moz-animation-duration: 3s;*/
-  /*animation-name: scroll-left;*/
-  -webkit-animation-name: ticker-header-slide-left;
-  /*-moz-animation-name: scroll-left;*/
-  -webkit-animation-fill-mode: both;
+  white-space: nowrap;
+  -webkit-animation: ticker-header-slide-left linear both 1s 1s;
 }
 
 @-webkit-keyframes ticker-header-slide-left {
@@ -56,14 +53,7 @@ div.ticker-wrapper.ticker-header-slide header.ticker-header {
 }
 
 div.ticker-wrapper.ticker-header-slide fieldset.ticker-items {
-  -webkit-animation-delay: 1s;
-  /*animation-duration: 3s;*/
-  -webkit-animation-duration: 1s;
-  /*-moz-animation-duration: 3s;*/
-  /*animation-name: scroll-left;*/
-  -webkit-animation-name: expand-left;
-  /*-moz-animation-name: scroll-left;*/
-  -webkit-animation-fill-mode: both;
+  -webkit-animation: expand-left linear both 1s 1s;
 }
 
 @-webkit-keyframes expand-left {
@@ -79,7 +69,7 @@ div.ticker-wrapper.ticker-header-slide fieldset.ticker-items {
 div.ticker-wrapper header.ticker-header span {
   width: 100%;
   padding: 0;
-  margin-bottom: 20px;
+  margin-bottom: 0;
   font-size: 21px;
   line-height: inherit;
 }
@@ -96,12 +86,14 @@ div.ticker-wrapper fieldset.ticker-items legend.ticker-topic {
   display: block;
   width: 100%;
   padding: 0 0 0 1em;
-  margin-bottom: 20px;
-  font-size: 21px;
-  line-height: inherit;
+  margin-bottom: 0;
+  /*font-size: 21px;*/
+  overflow: hidden;
 }
 
 div.ticker-wrapper fieldset.ticker-items ul.ticker-list {
+  padding: 0;
+  margin: 0;
   background-color: cyan;
   width: 100%;
   overflow: hidden;
@@ -109,17 +101,16 @@ div.ticker-wrapper fieldset.ticker-items ul.ticker-list {
 
 div.ticker-wrapper fieldset.ticker-items ul.ticker-list li.ticker-item {
   background-color: red;
-  display: inline-block;
+  display: list-item;
   width: 100%;
+  height: 1.3em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .ticker-scroller-left {
-  /*animation-duration: 3s;*/
-  -webkit-animation-duration: 3s;
-  /*-moz-animation-duration: 3s;*/
-  /*animation-name: scroll-left;*/
-  -webkit-animation-name: scroll-left;
-  /*-moz-animation-name: scroll-left;*/
+  -webkit-animation: scroll-left 3s linear;
 }
 
 @-webkit-keyframes scroll-left {
@@ -130,4 +121,25 @@ div.ticker-wrapper fieldset.ticker-items ul.ticker-list li.ticker-item {
   to {
   }
 }
+
+.disappear-left {
+  -webkit-animation-name: disappear-left-step1, disappear-left-step2;
+  -webkit-animation-duration: 4s, 0;
+  -webkit-animation-delay: 0, 4s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-fill-mode: both;
+}
+
+@-webkit-keyframes disappear-left-step1 {
+  from { width: inherit; } to { width: 0; }
+}
+
+@-webkit-keyframes disappear-left-step2 {
+  from { height: inherit; } to { height: 0; }
+}
+
+/*.cut {*/
+/*height: 0;*/
+/*overflow: hidden;*/
+/*}*/
 
